@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hangman</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <script src="js/script.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>Uppgift 03 - Hangman</h1>
+    </header>
+    <main>
+      <article>
+        <h2>Välkommen till spelet Hänga gubbe.</h2>
+        <p>
+          När du trycker på "starta spelet", kommer datorn att välja ett land
+          slumpmässigt. <br />
+          Det kommer då dyka upp ett antal fält som motsvarar antalet bokstäver
+          i namnet på landet. <br />
+          Ditt mål är att gissa vilket land som efterfrågas genom att trycka på
+          bokstavsknapparna.<br />
+          Om du gissar på en bokstav som finns i namnet på landet dyker den upp
+          i en av rutorna, <br />men gissar du fel kommer din hangman ett steg
+          närmre döden. <br />Tänk på att länderna är på engelska!
+        </p>
+      </article>
+      <button class="btn btn--stripe" type="button" id="startGameBtn">
+        Start new game
+      </button>
+      <section id="gameBoard">
+        <img id="hangman" src="images/h6.png" alt="hangman" />
+        <section id="letterBoxes">
+          <!--This is where the matched letters should appear, these should match the number of letters in the selected word -->
+          <ul id="listOfboxes"></ul>
+        </section>
+        <section id="message">
+          <!-- This is where messages should appear -->
+        </section>
+        <ul id="letterButtons">
+          <li>
+            <button
+              class="btn btn--stripe"
+              type="button"
+              onclick="handleLetter(this.value)"
+              value="A"
+            >
+              A
+            </button>
+          </li>
+          <li>
+            <button
+              class="btn btn--stripe"
+              type="button"
+              onclick="handleLetter(this.value)"
+              value="B"
+            >
+              B
+            </button>
+          </li>
+          <li>
+            <button
+              class="btn btn--stripe"
+              type="button"
+              onclick="handleLetter(this.value)"
+              value="C"
+            >
+              C
+            </button>
+          </li>
+          <li>
+            <button
+              class="btn btn--stripe"
+              type="button"
+              onclick="handleLetter(this.value)"
+              value="D"
+            >
+              D
+            </button>
+          </li>
+          <li>
+            <button
+              class="btn btn--stripe"
+              type="button"
+              onclick="handleLetter(this.value)"
+              value="E"
+            >
+              E
+            </button>
+          </li>
+          <li>
+            <button
+              class="btn btn--stripe"
+              type="button"
+              onclick="handleLetter(this.value)"
+              value="F"
+            >
+              F
+            </button>
+          </li>
+          <li>
+            <button
+              class="btn btn--stripe"
+              type="button"
+              onclick="handleLetter(this.value)"
+              value="G"
+            >
+              G
+            </button>
+          </li>
+          <li>
+            <button
+              class="btn btn--stripe"
+              type="button"
+              onclick="handleLetter(this.value)"
+              value="H"
+            >
+              H
+            </button>
+          </li>
+          <li>
+            <button
+              class="btn btn--stripe"
+              type="button"
+              onclick="handleLetter(this.value)"
+              value="I"
+            >
+              I
+            </button>
+          </li>
+          <li>
+            <button
+              class="btn btn--stripe"
+              type="button"
+              onclick="handleLetter(this.value)"
+              value="J"
+            >
+              J
+            </button>
+          </li>
+          <li>
+            <button
+              class="btn btn--stripe"
+              type="button"
+              onclick="handleLetter(this.value)"
+              value="K"
+            >
+              K
+            </button>
+          </li>
+          <li>
+            <button
+              class="btn btn--stripe"
+              type="button"
+              onclick="handleLetter(this.value)"
+              value="L"
+            >
+              L
+            </button>
+          </li>
+          <li>
+            <button
+              class="btn btn--stripe"
+              type="button"
+              onclick="handleLetter(this.value)"
+              value="M"
+            >
+              M
+            </button>
+          </li>
+          <li>
+            <button
+              class="btn btn--stripe"
+              type="button"
+              onclick="handleLetter(this.value)"
+              value="N"
+            >
+              N
+            </button>
+          </li>
+          <li>
+            <button
+              class="btn btn--stripe"
+              type="button"
+              onclick="handleLetter(this.value)"
+              value="O"
+            >
+              O
+            </button>
+          </li>
+          <li>
+            <button
+              class="btn btn--stripe"
+              type="button"
+              onclick="handleLetter(this.value)"
+              value="P"
+            >
+              P
+            </button>
+          </li>
+          <li>
+            <button
+              class="btn btn--stripe"
+              type="button"
+              onclick="handleLetter(this.value)"
+              value="Q"
+            >
+              Q
+            </button>
+          </li>
+          <li>
+            <button
+              class="btn btn--stripe"
+              type="button"
+              onclick="handleLetter(this.value)"
+              value="R"
+            >
+              R
+            </button>
+          </li>
+          <li>
+            <button
+              class="btn btn--stripe"
+              type="button"
+              onclick="handleLetter(this.value)"
+              value="S"
+            >
+              S
+            </button>
+          </li>
+          <li>
+            <button
+              class="btn btn--stripe"
+              type="button"
+              onclick="handleLetter(this.value)"
+              value="T"
+            >
+              T
+            </button>
+          </li>
+          <li>
+            <button
+              class="btn btn--stripe"
+              type="button"
+              onclick="handleLetter(this.value)"
+              value="U"
+            >
+              U
+            </button>
+          </li>
+          <li>
+            <button
+              class="btn btn--stripe"
+              type="button"
+              onclick="handleLetter(this.value)"
+              value="V"
+            >
+              V
+            </button>
+          </li>
+          <li>
+            <button
+              class="btn btn--stripe"
+              type="button"
+              onclick="handleLetter(this.value)"
+              value="W"
+            >
+              W
+            </button>
+          </li>
+          <li>
+            <button
+              class="btn btn--stripe"
+              type="button"
+              onclick="handleLetter(this.value)"
+              value="X"
+            >
+              X
+            </button>
+          </li>
+          <li>
+            <button
+              class="btn btn--stripe"
+              type="button"
+              onclick="handleLetter(this.value)"
+              value="Y"
+            >
+              Y
+            </button>
+          </li>
+          <li>
+            <button
+              class="btn btn--stripe"
+              type="button"
+              onclick="handleLetter(this.value)"
+              value="Z"
+            >
+              Z
+            </button>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <footer>Linus Unghammar - Hangman</footer>
+  </body>
+</html>
